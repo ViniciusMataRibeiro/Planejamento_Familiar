@@ -12,7 +12,7 @@ class LoginPageCadastro extends GetView<LoginCadastroController> {
         child: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/tela_login.png'),
+                image: AssetImage('assets/images/tela_registro.png'),
                 fit: BoxFit.cover),
           ),
           child: ListView(

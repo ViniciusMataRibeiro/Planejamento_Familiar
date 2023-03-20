@@ -21,26 +21,14 @@ class _MetContracepPage extends State<MetContracepPage> {
         child: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/tela_login.png'),
+                image: AssetImage('assets/images/metodos_tela.png'),
                 fit: BoxFit.cover),
           ),
           child: ListView(
             children: [
-              Center(
-                child: Container(
-                  height: 100,
-                  width: 100,
-                  margin: const EdgeInsets.only(top: 80),
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/design_login.png'),
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(100)),
-                      ),
-                ),
-              ),
+              const SizedBox(height: 110),
               Container(
-                height: 420,
+                height: 450,
                 margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -148,9 +136,6 @@ class _MetContracepPage extends State<MetContracepPage> {
                         ),
                       ],
                     ),
-                  Row(
-                    
-                  )
                   ],
                 )
               ),
