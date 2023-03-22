@@ -1,21 +1,30 @@
-import 'package:desenvolvimento_mobile/cadastro/login_page_cadastro.dart';
-import 'package:desenvolvimento_mobile/login/login_page.dart';
-import 'package:desenvolvimento_mobile/met_contracep/met_contracep_page.dart';
+import 'package:desenvolvimento_mobile/routes/pages.dart';
+import 'package:desenvolvimento_mobile/routes/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'core/app_theme.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginPageCadastro(),
-    );
-  }
+main() async {
+
+  Intl.defaultLocale = 'pt_BR';
+  runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: false,
+    initialRoute: Routes.login,
+    theme: themeData,
+    defaultTransition: Transition.fade,
+    getPages: AppPages.pages,
+    localizationsDelegates: const [
+      GlobalMaterialLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate,
+    ],
+    locale: const Locale('pt', 'BR'),
+    supportedLocales: const [
+      Locale('pt', 'BR'),
+    ],
+  ));
 }
