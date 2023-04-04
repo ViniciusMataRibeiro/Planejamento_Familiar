@@ -30,7 +30,7 @@ class _MetContracepPage extends State<MetContracepPage> {
                 child: Container(
                   height: 140,
                   width: 140,
-                  margin: const EdgeInsets.only(top: 70, bottom: 30),
+                  margin: const EdgeInsets.only(top: 50, bottom: 20),
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/images/design_login.png'),
@@ -48,7 +48,7 @@ class _MetContracepPage extends State<MetContracepPage> {
                 ),
               ),
               Container(
-                height: 450,
+                height: 500,
                 margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -119,9 +119,78 @@ class _MetContracepPage extends State<MetContracepPage> {
                         ),
                       ],
                     ),
+                    Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          child: const TextField(
+                            style: TextStyle(
+                              color: Colors.white
+                            ),
+                            decoration: InputDecoration(
+                              labelText: 'Se sim, qual?',
+                              labelStyle: TextStyle(
+                                color: Colors.white70,
+                                fontSize: 18,
+                              )
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(height: 15),
+                    const Text(
+                      'Você faz planejamento',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                    const Text(
+                      'familiar?',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          child: const TextField(
+                            style: TextStyle(
+                              color: Colors.white
+                            ),
+                            decoration: InputDecoration(
+                              labelText: 'Se sim, qual?',
+                              labelStyle: TextStyle(
+                                color: Colors.white70,
+                                fontSize: 18,
+                              )
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  const SizedBox(height: 40),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                    padding: const EdgeInsets.only(top: 5, bottom: 5, right: 20, left: 20),
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(100),
+                        ),
+                        side: BorderSide(width: 2, color: Colors.black12)),
+                  ),
+                  child: const Text('Registrar',
+                      style: TextStyle(fontSize: 30, color: Colors.redAccent)),
+                ),
                   ],
                 ),
               ),
+              const SizedBox(height: 20),
             ],
           ),
         ),

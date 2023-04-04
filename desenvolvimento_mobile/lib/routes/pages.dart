@@ -1,4 +1,6 @@
 
+import 'package:desenvolvimento_mobile/modules/agenda/agenda_binding.dart';
+import 'package:desenvolvimento_mobile/modules/agenda/agenda_page.dart';
 import 'package:desenvolvimento_mobile/modules/cadastro/login_page_cadastro.dart';
 import 'package:desenvolvimento_mobile/modules/met_contracep/met_contracep_binding.dart';
 import 'package:desenvolvimento_mobile/modules/met_contracep/met_contracep_page.dart';
@@ -25,5 +27,10 @@ abstract class AppPages {
       page: () => const MetContracepPage(),
       binding: MetContracepBinding(),
     ),
+    GetPage(
+      name: Routes.agenda,
+      page: () => const AgendaPage(),
+      binding: AgendaBinding(),
+    )
   ];
 }

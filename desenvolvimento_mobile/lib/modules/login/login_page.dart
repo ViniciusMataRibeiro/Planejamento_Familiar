@@ -21,7 +21,7 @@ class LoginPage extends GetView<LoginController> {
                 child: Container(
                   height: 140,
                   width: 140,
-                  margin: const EdgeInsets.only(top: 80, bottom: 30),
+                  margin: const EdgeInsets.only(top: 70, bottom: 10),
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/images/design_login.png'),
@@ -141,7 +141,7 @@ class LoginPage extends GetView<LoginController> {
                     child: const Padding(
                       padding: EdgeInsets.only(top: 10),
                       child: Text(
-                        'Não tem uma Conta? Cadastre-se já!',
+                        'Não tem uma Conta? Cadastre-se aqui!',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
