@@ -1,4 +1,3 @@
-
 import 'package:desenvolvimento_mobile/modules/agenda/agenda_binding.dart';
 import 'package:desenvolvimento_mobile/modules/agenda/agenda_page.dart';
 import 'package:desenvolvimento_mobile/modules/cadastro/login_page_cadastro.dart';
@@ -12,7 +11,7 @@ import '../modules/login/login_page.dart';
 
 abstract class AppPages {
   static final pages = [
-     GetPage(
+    GetPage(
       name: Routes.login,
       page: () => const LoginPage(),
       binding: LoginBinding(),
@@ -29,7 +28,7 @@ abstract class AppPages {
     ),
     GetPage(
       name: Routes.agenda,
-      page: () => const AgendaPage(),
+      page: () => AgendaPage(),
       binding: AgendaBinding(),
     )
   ];
