@@ -35,6 +35,8 @@ dependencies:
     sdk: flutter
   get: ^4.6.3
   intl: ^0.17.0
+  ficonsax:
+  
 
 
 
@@ -43,6 +45,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   mask_text_input_formatter: ^2.4.0
   table_calendar: ^3.0.8
+  flutter_svg: ^1.1.6
 
 dev_dependencies:
   flutter_test:
@@ -64,12 +67,14 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
+  
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/
      - assets/images/
+     - assets/icon/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

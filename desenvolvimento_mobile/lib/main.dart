@@ -5,7 +5,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-import 'core/app_theme.dart';
 
 
 main() async {
@@ -13,8 +12,7 @@ main() async {
   Intl.defaultLocale = 'pt_BR';
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: Routes.login,
-    theme: themeData,
+    initialRoute: Routes.agenda,
     defaultTransition: Transition.fade,
     getPages: AppPages.pages,
     localizationsDelegates: const [

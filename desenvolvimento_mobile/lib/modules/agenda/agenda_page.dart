@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 
 class AgendaPage extends StatefulWidget {
-  AgendaPage({super.key});
+ const AgendaPage({super.key});
 
   @override
   State<AgendaPage> createState() => _AgendaPage();
@@ -21,57 +22,85 @@ class _AgendaPage extends State<AgendaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: const Color.fromARGB(230, 255, 115, 95),
+          iconTheme: const IconThemeData(color: Colors.red),
+        ),
         drawer: Drawer(
-          backgroundColor: const Color.fromARGB(190, 255, 115, 95),
+          backgroundColor: const Color.fromARGB(230, 255, 115, 95),
           child: ListView(
-            children: const [
-              SizedBox(
-                height: 30,
+            children: [
+              const SizedBox(
+                height: 20,
               ),
               ListTile(
-                tileColor: Colors.redAccent,
+                onTap: () {
+                  setState(() {
+                    
+                  });
+                },
+                tileColor: const Color.fromARGB(0, 255, 115, 95),
                 iconColor: Colors.white,
-                leading: Icon(Icons.family_restroom_outlined, size: 40),
-                title: Text('Planejamento Familiar',
+                leading: const Icon(Icons.family_restroom_outlined, size: 40),
+                title: const Text('Planejamento Familiar',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
                     )),
               ),
-              Divider(
+              const Divider(
                 thickness: 2,
+                color: Colors.white,
               ),
               ListTile(
-                tileColor: Colors.redAccent,
+                onTap: () {
+                  setState(() {
+                    
+                  });
+                },
+                tileColor: const Color.fromARGB(0, 255, 115, 95),
                 iconColor: Colors.white,
-                leading: Icon(Icons.family_restroom_outlined, size: 40),
-                title: Text('Quebrando o Tabu',
+                leading: const Icon(Icons.chat_sharp, size: 40),
+                title: const Text('Quebrando o Tabu',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
                     )),
               ),
-              Divider(
+              const Divider(
                 thickness: 2,
+                color: Colors.white,
               ),
               ListTile(
-                tileColor: Colors.redAccent,
+                onTap: () {
+                  setState(() {
+                    
+                  });
+                },
+                tileColor: const Color.fromARGB(0, 255, 115, 95),
                 iconColor: Colors.white,
-                leading: Icon(Icons.family_restroom_outlined, size: 40),
-                title: Text('Métodos Hormonais',
+                leading: const Icon(Icons.add_circle_outline, size: 40),
+                title: const Text('Métodos Hormonais',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
                     )),
               ),
-              Divider(
+              const Divider(
                 thickness: 2,
+                color: Colors.white,
               ),
               ListTile(
-                tileColor: Colors.redAccent,
+                onTap: () {
+                  setState(() {
+                    
+                  });
+                },
+                tileColor:  const Color.fromARGB(0, 255, 115, 95),
                 iconColor: Colors.white,
-                leading: Icon(Icons.family_restroom_outlined, size: 40),
-                title: Text('Métodos não Hormanais',
+                leading: const Icon(Icons.add_circle_rounded, size: 40),          
+                title: const Text('Métodos não Hormanais',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
@@ -80,17 +109,16 @@ class _AgendaPage extends State<AgendaPage> {
             ],
           ),
         ),
-        appBar: AppBar(
-          title: const Text('Agenda'),
-        ),
         body: Column(
           children: [
             Container(
+              padding: const EdgeInsets.all(10),
+              color: const Color.fromARGB(230, 255, 115, 95),
               child: TableCalendar(
                 locale: Localizations.localeOf(context).languageCode,
                 rowHeight: 45,
-                headerStyle: HeaderStyle(
-                    formatButtonVisible: false, titleCentered: true),
+                headerStyle: const HeaderStyle(
+                formatButtonVisible: false, titleCentered: true),
                 availableGestures: AvailableGestures.all,
                 selectedDayPredicate: (day) => isSameDay(day, today),
                 focusedDay: today,
