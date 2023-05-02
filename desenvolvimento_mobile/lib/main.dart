@@ -12,7 +12,7 @@ main() async {
   Intl.defaultLocale = 'pt_BR';
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: Routes.agenda,
+    initialRoute: Routes.login,
     defaultTransition: Transition.fade,
     getPages: AppPages.pages,
     localizationsDelegates: const [

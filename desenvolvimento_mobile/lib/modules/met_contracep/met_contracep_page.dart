@@ -9,10 +9,11 @@ class MetContracepPage extends StatefulWidget {
 }
 
 class _MetContracepPage extends State<MetContracepPage> {
-  bool isSelectSim = false;
-  bool isSelectNao = false;
+
   int id = 1;
+  int idp = 1;
   String radioButtonItem = 'Sim';
+  String radioButtonItemp = 'Sim';
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,7 @@ class _MetContracepPage extends State<MetContracepPage> {
                 ),
               ),
               Container(
-                height: 500,
+                height: 550,
                 margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -153,6 +154,49 @@ class _MetContracepPage extends State<MetContracepPage> {
                         fontSize: 18,
                       ),
                     ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Row(
+                          children: [
+                            Radio(
+                                fillColor: MaterialStateColor.resolveWith(
+                                    (states) => Colors.white),
+                                value: 1,
+                                groupValue: idp,
+                                onChanged: (value) {
+                                  setState(() {
+                                    radioButtonItemp = 'sim';
+                                    idp = 1;
+                                  });
+                                }),
+                            const Text(
+                              'Sim',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Radio(
+                                fillColor: MaterialStateColor.resolveWith(
+                                    (states) => Colors.white),
+                                value: 2,
+                                groupValue: idp,
+                                onChanged: (value) {
+                                  setState(() {
+                                    radioButtonItemp = 'nao';
+                                    idp = 2;
+                                  });
+                                }),
+                            const Text(
+                              'Não',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                     Column(
                       children: [
                         Container(
@@ -174,7 +218,7 @@ class _MetContracepPage extends State<MetContracepPage> {
                     ),
                   const SizedBox(height: 40),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => Get.toNamed('/agenda'),
                     style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                     padding: const EdgeInsets.only(top: 5, bottom: 5, right: 20, left: 20),

@@ -281,7 +281,7 @@ class LoginCadastro extends State<LoginCadastroState>
                 height: 20,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 8, left: 28, right: 28),
+                padding: const EdgeInsets.only(top: 8, left: 28, right: 28, bottom: 30),
                 child: ElevatedButton(
                   onPressed: () => Get.toNamed('/metContracep'),
                   style: ElevatedButton.styleFrom(

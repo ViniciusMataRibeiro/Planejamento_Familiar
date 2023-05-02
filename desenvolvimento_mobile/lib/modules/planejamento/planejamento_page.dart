@@ -18,7 +18,7 @@ class _PlanejamentoPage extends State<PlanejamentoPage> {
           color: Color.fromARGB(255, 255, 255, 255),
           size: 40,
         ),
-        backgroundColor: Color.fromARGB(255, 249, 104, 83),
+        backgroundColor: const Color.fromARGB(255, 249, 104, 83),
         title: Center(
           child: Column(children: const [
             Center(
@@ -40,7 +40,7 @@ class _PlanejamentoPage extends State<PlanejamentoPage> {
             margin: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               border: Border.all(
-                color: Color.fromARGB(255, 249, 104, 83), // Cor da borda
+                color: const Color.fromARGB(255, 249, 104, 83), // Cor da borda
                 width: 2, // Largura da borda
               ),
               borderRadius: BorderRadius.circular(8), // Bordas arredondadas
@@ -56,7 +56,7 @@ class _PlanejamentoPage extends State<PlanejamentoPage> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 30,
                 ),
                 Text(
