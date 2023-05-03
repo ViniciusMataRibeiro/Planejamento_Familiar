@@ -46,6 +46,7 @@ dependencies:
   mask_text_input_formatter: ^2.4.0
   table_calendar: ^3.0.8
   flutter_svg: ^1.1.6
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:

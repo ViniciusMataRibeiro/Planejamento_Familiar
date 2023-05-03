@@ -23,7 +23,7 @@ class _PlanejamentoPage extends State<PlanejamentoPage> {
           child: Column(children: const [
             Center(
               child: Text(
-                'O que é Planejamento familiar',
+                'Planejamento familiar',
                 style: TextStyle(
                     fontSize: 30,
                     color: Colors.white,
@@ -37,6 +37,7 @@ class _PlanejamentoPage extends State<PlanejamentoPage> {
       body: ListView(
         children: [
           Container(
+            height: 800,
             margin: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               border: Border.all(
@@ -45,11 +46,11 @@ class _PlanejamentoPage extends State<PlanejamentoPage> {
               ),
               borderRadius: BorderRadius.circular(8), // Bordas arredondadas
             ),
-            padding: const EdgeInsets.all(50), // Espaçamento interno
+            padding: const EdgeInsets.all(12), // Espaçamento interno
             child: Column(
               children: const [
                 Text(
-                  'O que é Planejamento familiar? E por que fazer?',
+                  'O que é Planejamento familiar?',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,
@@ -60,16 +61,16 @@ class _PlanejamentoPage extends State<PlanejamentoPage> {
                   height: 30,
                 ),
                 Text(
-                  'Planejamento familiar são ações criadas com o objetivo de orientar mulheres' + 
-                  'e homens quanto aos métodos contraceptivos, prevenção de gravidez não desejada' +
-                  'e direito de escolha de ter filhos ou não. E para aqueles casais que desejam ser pais,' + 
-                  'o planejamento familiar orienta sobre a importância da preparação do organismo feminino e' + 
-                  'da organização estrutural antes da chegada dos filhos.' +
-                  'Para que isto ocorra é necessário a assistência do serviço de saúde e o acompanhamento' +
-                  'médico, pois são eles que promovem o acesso à informação' +
-                  'sobre os métodos mais eficazes e seguros de acordo com as necessidades do paciente.' + 
-                  'Com isso, contribuir por meio de orientações para que o casal tenha' +
-                  'sua vivência da sexualidade com segurança e saúde, pois planejamento familiar é' + 
+                  'Planejamento familiar são ações criadas com o objetivo de orientar mulheres ' + 
+                  'e homens quanto aos métodos contraceptivos, prevenção de gravidez não desejada ' +
+                  'e direito de escolha de ter filhos ou não. E para aqueles casais que desejam ser pais, ' + 
+                  'o planejamento familiar orienta sobre a importância da preparação do organismo feminino e ' + 
+                  'da organização estrutural antes da chegada dos filhos. ' +
+                  'Para que isto ocorra é necessário a assistência do serviço de saúde e o acompanhamento ' +
+                  'médico, pois são eles que promovem o acesso à informação ' +
+                  'sobre os métodos mais eficazes e seguros de acordo com as necessidades do paciente. ' + 
+                  'Com isso, contribuir por meio de orientações para que o casal tenha ' +
+                  'sua vivência da sexualidade com segurança e saúde, pois planejamento familiar é ' + 
                   'também sinônimo de bem-estar físico e mental de mulheres e homens.',
                   textAlign: TextAlign.center,
                   style: TextStyle(

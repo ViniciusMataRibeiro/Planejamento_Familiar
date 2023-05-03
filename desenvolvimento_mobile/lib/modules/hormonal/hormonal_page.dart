@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HormonalPage extends StatefulWidget {
   const HormonalPage({super.key});
@@ -9,6 +9,19 @@ class HormonalPage extends StatefulWidget {
 }
 
 class _HormonalPage extends State<HormonalPage> {
+
+  final Uri _url = Uri.parse('https://www.vivasuavida.com.br/metodos-contraceptivos/contraceptivos-curta-duracao/capuz-cervical');
+
+  Future<void> _cervical() async {
+    if(!await launchUrl(_url)){
+      throw Exception('Could not launch $_url');
+    }
+    else{
+      await launchUrl(_url);
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,8 +32,8 @@ class _HormonalPage extends State<HormonalPage> {
           size: 40,
         ),
         backgroundColor: Color.fromARGB(255, 249, 104, 83),
-        title: Center(
-          child: Column(children: const [
+        title: Row(
+          children: const [
             Center(
               child: Text(
                 'Tipos de métodos',
@@ -31,7 +44,7 @@ class _HormonalPage extends State<HormonalPage> {
                     fontWeight: FontWeight.w600),
               ),
             ),
-          ]),
+          ],
         ),
       ),
       body: ListView(
@@ -87,33 +100,23 @@ class _HormonalPage extends State<HormonalPage> {
                   height: 30,
                 ),
                 const Text(
-                  'Hormonal familiar são ações criadas com o objetivo de orientar mulheres' +
-                      'e homens quanto aos métodos contraceptivos, prevenção de gravidez não desejada' +
-                      'e direito de escolha de ter filhos ou não. E para aqueles casais que desejam ser pais,' +
-                      'o Hormonal familiar orienta sobre a importância da preparação do organismo feminino e' +
-                      'da organização estrutural antes da chegada dos filhos.' +
-                      'Para que isto ocorra é necessário a assistência do serviço de saúde e o acompanhamento' +
-                      'médico, pois são eles que promovem o acesso à informação' +
-                      'sobre os métodos mais eficazes e seguros de acordo com as necessidades do paciente.' +
-                      'Com isso, contribuir por meio de orientações para que o casal tenha' +
-                      'sua vivência da sexualidade com segurança e saúde, pois Hormonal familiar é' +
-                      'também sinônimo de bem-estar físico e mental de mulheres e homens.',
+                  'Os métodos para prevenção a gravidez ou chamados de contraceptivos hormonais ' +
+                  'são métodos que tem em sua formação várias concentrações sintéticas de hormônios ' + 
+                  'femininos do organismo humano, sendo eles: estrógeno e progesterona. Tendo em ' + 
+                  'vista isso, os métodos podem ter um hormônio só ou os dois hormônios juntos.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
                   ),
                 ),
+                const SizedBox(height: 20),
                 Column(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           ElevatedButton(
-                            onPressed: () {
-                              // Ação a ser executada quando o botão for pressionado
-                            },
+                            onPressed: _cervical,
                             // ignore: sort_child_properties_last
                             child: Container(
                               width: 70.0,
@@ -141,9 +144,7 @@ class _HormonalPage extends State<HormonalPage> {
                                     color: Color.fromARGB(255, 154, 177, 255),
                                     width: 4)),
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(50),
-                            child: ElevatedButton(
+                          ElevatedButton(
                               onPressed: () {
                                 // Ação a ser executada quando o botão for pressionado
                               },
@@ -174,7 +175,6 @@ class _HormonalPage extends State<HormonalPage> {
                                       color: Color.fromARGB(255, 154, 177, 255),
                                       width: 4)),
                             ),
-                          ),
                           ElevatedButton(
                             onPressed: () {
                               // Ação a ser executada quando o botão for pressionado
@@ -208,7 +208,12 @@ class _HormonalPage extends State<HormonalPage> {
                           ),
                         ],
                       ),
-                    )
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: const [
+                          Text('Capuz Cervical'),
+                        ],
+                      )
                   ],
                 ),
               ],

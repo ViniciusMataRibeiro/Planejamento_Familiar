@@ -117,7 +117,6 @@ class _AgendaPage extends State<AgendaPage> {
           children: [
             Container(
               height: 400,
-              width: 400,
               padding: const EdgeInsets.all(12),
               color: const Color.fromARGB(250, 255, 115, 95),
               child: TableCalendar(              
