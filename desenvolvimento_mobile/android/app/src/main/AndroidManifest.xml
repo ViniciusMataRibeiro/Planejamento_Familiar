@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.desenvolvimentomobile.desenvolvimento_mobile">
    <application
-        android:label="desenvolvimento_mobile"
+        android:label="Plano Familiar"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
