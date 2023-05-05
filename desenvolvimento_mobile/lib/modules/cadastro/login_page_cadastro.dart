@@ -187,9 +187,8 @@ class LoginCadastro extends State<LoginCadastroState>
                       isThreeLine: false,
                       subtitle: Text(
                         updatedDt,
-                        style: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.white),
+                        style:
+                            const TextStyle(fontSize: 20, color: Colors.white),
                       ),
                       trailing: const Icon(
                         Icons.arrow_drop_down,
@@ -198,6 +197,41 @@ class LoginCadastro extends State<LoginCadastroState>
                       onTap: () => _data(context),
                     ),
                   ],
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
+                padding: const EdgeInsets.all(8),
+                child: Form(
+                  child: TextFormField(
+                    style: const TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                    keyboardType: TextInputType.emailAddress,
+                    cursorColor: Colors.white,
+                    decoration: const InputDecoration(
+                      labelStyle: TextStyle(
+                        color: Colors.white,
+                        fontSize: 23,
+                        fontStyle: FontStyle.italic,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(100),
+                        ),
+                        borderSide: BorderSide(color: Colors.white, width: 0.9),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(100),
+                        ),
+                      ),
+                      labelText: 'Usuario',
+                      prefixIcon:
+                          Icon(Icons.accessibility_new, color: Colors.white),
+                    ),
+                  ),
                 ),
               ),
               Container(
@@ -281,7 +315,8 @@ class LoginCadastro extends State<LoginCadastroState>
                 height: 20,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 8, left: 28, right: 28, bottom: 30),
+                padding: const EdgeInsets.only(
+                    top: 8, left: 28, right: 28, bottom: 30),
                 child: ElevatedButton(
                   onPressed: () => Get.toNamed('/metContracep'),
                   style: ElevatedButton.styleFrom(

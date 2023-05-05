@@ -36,6 +36,7 @@ dependencies:
   get: ^4.6.3
   intl: ^0.17.0
   ficonsax:
+  sqflite: ^2.2.8
   
 
 
