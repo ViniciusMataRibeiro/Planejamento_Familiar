@@ -206,13 +206,13 @@ class _HormonalPage extends State<HormonalPage> {
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
-                                        color: Colors.black, blurRadius: 10)
+                                        color: Colors.black, blurRadius: 3)
                                   ]),
                               child: const Center(
                                 child: Icon(
-                                  Icons.local_hospital_rounded,
+                                  Icons.wb_twilight_outlined,
                                   color: Colors.white,
-                                  size: 40,
+                                  size: 50,
                                 ),
                               ),
                             ),
@@ -220,8 +220,8 @@ class _HormonalPage extends State<HormonalPage> {
                                 padding: EdgeInsets.zero,
                                 shape: const CircleBorder(),
                                 side: const BorderSide(
-                                    color: Color.fromARGB(255, 154, 177, 255),
-                                    width: 4)),
+                                    color: Color.fromARGB(255, 154, 177, 255),                                   
+                                    width: 2)),
                           ),
                           ElevatedButton(
                               onPressed: _injetavel,
@@ -235,13 +235,13 @@ class _HormonalPage extends State<HormonalPage> {
                                     shape: BoxShape.circle,
                                     boxShadow: const [
                                       BoxShadow(
-                                          color: Colors.black, blurRadius: 10)
+                                          color: Colors.black, blurRadius: 3)
                                     ]),
                                 child: const Center(
                                   child: Icon(
-                                    Icons.local_hospital_rounded,
+                                    Icons.vaccines_outlined,
                                     color: Colors.white,
-                                    size: 40,
+                                    size: 50,
                                   ),
                                 ),
                               ),
@@ -250,7 +250,7 @@ class _HormonalPage extends State<HormonalPage> {
                                   shape: const CircleBorder(),
                                   side: const BorderSide(
                                       color: Color.fromARGB(255, 154, 177, 255),
-                                      width: 4)),
+                                      width: 2)),
                             ),
                           ElevatedButton(
                             onPressed: _oral,
@@ -264,13 +264,13 @@ class _HormonalPage extends State<HormonalPage> {
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
-                                        color: Colors.black, blurRadius: 10)
+                                        color: Colors.black, blurRadius: 3)
                                   ]),
                               child: const Center(
                                 child: Icon(
-                                  Icons.local_hospital_rounded,
+                                  Icons.table_view_outlined,
                                   color: Colors.white,
-                                  size: 40,
+                                  size: 50,
                                 ),
                               ),
                             ),
@@ -279,7 +279,7 @@ class _HormonalPage extends State<HormonalPage> {
                                 shape: const CircleBorder(),
                                 side: const BorderSide(
                                     color: Color.fromARGB(255, 154, 177, 255),
-                                    width: 4)),
+                                    width: 2)),
                           ),
                         ],
                       ),
@@ -314,13 +314,13 @@ class _HormonalPage extends State<HormonalPage> {
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
-                                        color: Colors.black, blurRadius: 10)
+                                        color: Colors.black, blurRadius: 3)
                                   ]),
                               child: const Center(
                                 child: Icon(
-                                  Icons.local_hospital_rounded,
+                                  Icons.vaccines_rounded,
                                   color: Colors.white,
-                                  size: 40,
+                                  size: 50,
                                 ),
                               ),
                             ),
@@ -329,7 +329,7 @@ class _HormonalPage extends State<HormonalPage> {
                                 shape: const CircleBorder(),
                                 side: const BorderSide(
                                     color: Color.fromARGB(255, 154, 177, 255),
-                                    width: 4)),
+                                    width: 2)),
                           ),
                           ElevatedButton(
                               onPressed: _esponja,
@@ -343,13 +343,13 @@ class _HormonalPage extends State<HormonalPage> {
                                     shape: BoxShape.circle,
                                     boxShadow: const [
                                       BoxShadow(
-                                          color: Colors.black, blurRadius: 10)
+                                          color: Colors.black, blurRadius: 3)
                                     ]),
                                 child: const Center(
                                   child: Icon(
-                                    Icons.local_hospital_rounded,
+                                    Icons.wb_cloudy,
                                     color: Colors.white,
-                                    size: 40,
+                                    size: 50,
                                   ),
                                 ),
                               ),
@@ -358,7 +358,7 @@ class _HormonalPage extends State<HormonalPage> {
                                   shape: const CircleBorder(),
                                   side: const BorderSide(
                                       color: Color.fromARGB(255, 154, 177, 255),
-                                      width: 4)),
+                                      width: 2)),
                             ),
                           ElevatedButton(
                             onPressed: _anel,
@@ -372,13 +372,13 @@ class _HormonalPage extends State<HormonalPage> {
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
-                                        color: Colors.black, blurRadius: 10)
+                                        color: Colors.black, blurRadius: 3)
                                   ]),
                               child: const Center(
                                 child: Icon(
-                                  Icons.local_hospital_rounded,
+                                  Icons.radio_button_off_rounded,
                                   color: Colors.white,
-                                  size: 40,
+                                  size: 50,
                                 ),
                               ),
                             ),
@@ -422,13 +422,13 @@ class _HormonalPage extends State<HormonalPage> {
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
-                                        color: Colors.black, blurRadius: 10)
+                                        color: Colors.black, blurRadius: 3)
                                   ]),
                               child: const Center(
                                 child: Icon(
-                                  Icons.local_hospital_rounded,
+                                  Icons.square,
                                   color: Colors.white,
-                                  size: 40,
+                                  size: 50,
                                 ),
                               ),
                             ),
@@ -437,7 +437,7 @@ class _HormonalPage extends State<HormonalPage> {
                                 shape: const CircleBorder(),
                                 side: const BorderSide(
                                     color: Color.fromARGB(255, 154, 177, 255),
-                                    width: 4)),
+                                    width: 2)),
                           ),
                           ElevatedButton(
                               onPressed: _implante,
@@ -451,13 +451,13 @@ class _HormonalPage extends State<HormonalPage> {
                                     shape: BoxShape.circle,
                                     boxShadow: const [
                                       BoxShadow(
-                                          color: Colors.black, blurRadius: 10)
+                                          color: Colors.black, blurRadius: 3)
                                     ]),
                                 child: const Center(
                                   child: Icon(
-                                    Icons.local_hospital_rounded,
+                                    Icons.remove,
                                     color: Colors.white,
-                                    size: 40,
+                                    size: 70,
                                   ),
                                 ),
                               ),
@@ -466,7 +466,7 @@ class _HormonalPage extends State<HormonalPage> {
                                   shape: const CircleBorder(),
                                   side: const BorderSide(
                                       color: Color.fromARGB(255, 154, 177, 255),
-                                      width: 4)),
+                                      width: 2)),
                             ),
                           ElevatedButton(
                             onPressed: _pilula,
@@ -480,13 +480,13 @@ class _HormonalPage extends State<HormonalPage> {
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
-                                        color: Colors.black, blurRadius: 10)
+                                        color: Colors.black, blurRadius: 3)
                                   ]),
                               child: const Center(
                                 child: Icon(
-                                  Icons.local_hospital_rounded,
+                                  Icons.remove_circle,
                                   color: Colors.white,
-                                  size: 40,
+                                  size: 35,
                                 ),
                               ),
                             ),
@@ -495,7 +495,7 @@ class _HormonalPage extends State<HormonalPage> {
                                 shape: const CircleBorder(),
                                 side: const BorderSide(
                                     color: Color.fromARGB(255, 154, 177, 255),
-                                    width: 4)),
+                                    width: 2)),
                           ),
                         ],
                       ),
@@ -513,6 +513,7 @@ class _HormonalPage extends State<HormonalPage> {
                       const SizedBox(height: 20),
                   ],
                 ),
+                
               ],
             ),
           )
