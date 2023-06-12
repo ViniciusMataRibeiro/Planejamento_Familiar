@@ -17,7 +17,7 @@ class Usuario {
   late String email;
   late String senha;
 
-  Usuario();
+  Usuario(this.usuario, this.senha);
 
   Usuario.fromMap(Map map) {
     id = map[id];
@@ -61,7 +61,7 @@ class DatabaseProvider {
     return db.insert(tabelaUsuario, usuario.toMap());
   }
 
-  Future<Usuario?> getUsuario(int id) async {
+  Future<Usuario?> getUsuario(String usuario, String senha) async {
     final db = await DatabaseProvider().initDb();
     List<Map> maps = await db.query(tabelaUsuario,
         columns: [
@@ -73,7 +73,7 @@ class DatabaseProvider {
           senhaColumn
         ],
         where: "$idColumn = ?",
-        whereArgs: [id]);
+        whereArgs: [usuario, senha]);
     if (maps.isNotEmpty) {
       return Usuario.fromMap(maps.first);
     } else {
