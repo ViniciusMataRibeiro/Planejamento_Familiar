@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -73,8 +74,9 @@ class LoginCadastro extends State<LoginCadastroState>
     );
     if (picked != null) {
       setState(() {
-        dt = picked;
+        dt = picked; 
         data = dt.toIso8601String();
+        cadastroExtintorController.dataNascimentoController.text = data;
         updatedDt = newFormat.format(picked);
       });
     }
@@ -132,6 +134,7 @@ class LoginCadastro extends State<LoginCadastroState>
                 padding: const EdgeInsets.all(8),
                 child: Form(
                   child: TextFormField(
+                    controller: cadastroExtintorController.nomeCompletoController,
                     style: const TextStyle(
                         fontSize: 15,
                         color: Colors.white,
@@ -205,6 +208,7 @@ class LoginCadastro extends State<LoginCadastroState>
                 padding: const EdgeInsets.all(8),
                 child: Form(
                   child: TextFormField(
+                    controller: cadastroExtintorController.userController,
                     style: const TextStyle(
                         fontSize: 15,
                         color: Colors.white,
@@ -240,6 +244,7 @@ class LoginCadastro extends State<LoginCadastroState>
                 padding: const EdgeInsets.all(8),
                 child: Form(
                   child: TextFormField(
+                    controller: cadastroExtintorController.emailController,
                     style: const TextStyle(
                         fontSize: 15,
                         color: Colors.white,
@@ -274,6 +279,7 @@ class LoginCadastro extends State<LoginCadastroState>
                 padding: const EdgeInsets.all(8),
                 child: Obx(
                   () => TextFormField(
+                    controller: cadastroExtintorController.passwordController,
                     style: const TextStyle(fontSize: 15, color: Colors.white),
                     obscureText: cadastroExtintorController.showPassword.value,
                     cursorColor: Colors.white,
@@ -320,7 +326,26 @@ class LoginCadastro extends State<LoginCadastroState>
                     top: 8, left: 28, right: 28, bottom: 30),
                 child: ElevatedButton(
                   onPressed: () async {
-                    //await cadastroExtintorController.goTologin();
+                      var result = await cadastroExtintorController.cadastro();
+                      if (result != "ok") {
+                      final snackBar = SnackBar(
+                        elevation: 0,
+                        behavior: SnackBarBehavior.floating,
+                        backgroundColor: Colors.transparent,
+                        content: AwesomeSnackbarContent(
+                          title: 'Erro ao Cadastrar!',
+                          message: result.toString(),
+                          contentType: ContentType.failure,
+                        ),
+                      );
+                      // ignore: use_build_context_synchronously
+                      ScaffoldMessenger.of(context)
+                        ..hideCurrentSnackBar()
+                        ..showSnackBar(snackBar);
+                    }
+                    else{
+                      Get.toNamed('/metContracep');
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
@@ -333,7 +358,7 @@ class LoginCadastro extends State<LoginCadastroState>
                     ),
                   ),
                   child: const Text(
-                    'Criar Conta',
+                    'Continuar',
                     style: TextStyle(fontSize: 25, color: Colors.redAccent),
                   ),
                 ),
