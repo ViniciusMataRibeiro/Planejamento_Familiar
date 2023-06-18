@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -41,6 +42,7 @@ class LoginPage extends GetView<LoginController> {
                 padding: const EdgeInsets.all(8),
                 child: Form(
                   child: TextFormField(
+                    controller: controller.emailController,
                     style: const TextStyle(
                         fontSize: 15,
                         color: Colors.white,
@@ -77,6 +79,7 @@ class LoginPage extends GetView<LoginController> {
                 padding: const EdgeInsets.all(8),
                 child: Obx(
                   () => TextFormField(
+                    controller: controller.passwordController,
                     style: const TextStyle(fontSize: 15, color: Colors.white),
                     obscureText: controller.showPassword.value,
                     cursorColor: Colors.white,
@@ -120,7 +123,27 @@ class LoginPage extends GetView<LoginController> {
               Padding(
                 padding: const EdgeInsets.only(top: 10, left: 28, right: 28),
                 child: ElevatedButton(
-                  onPressed: () => Get.toNamed('/metContracep'),
+                  onPressed: () async {
+                    var result = await controller.goTologin();
+                    if (result != 'ok') {
+                      final snackBar = SnackBar(
+                        elevation: 0,
+                        behavior: SnackBarBehavior.floating,
+                        backgroundColor: Colors.transparent,
+                        content: AwesomeSnackbarContent(
+                          title: 'Erro ao Logar!',
+                          message: result.toString(),
+                          contentType: ContentType.failure,
+                        ),
+                      );
+                      // ignore: use_build_context_synchronously
+                      ScaffoldMessenger.of(context)
+                        ..hideCurrentSnackBar()
+                        ..showSnackBar(snackBar);
+                    } else {
+                      controller.toast('Logado com Sucesso!');
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                     padding: const EdgeInsets.only(top: 5, bottom: 5),

@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'database.dart';
 
 class LoginRequest {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NHormonalPage extends StatefulWidget {
@@ -11,7 +10,7 @@ class NHormonalPage extends StatefulWidget {
 
 class _NHormonalPage extends State<NHormonalPage> {
 
-    final Uri _urlTabelinha = Uri.parse('https://www.gineco.com.br/saude-feminina/metodos-contraceptivos/outros-metodos');
+  final Uri _urlTabelinha = Uri.parse('https://www.gineco.com.br/saude-feminina/metodos-contraceptivos/outros-metodos');
   final Uri _urlMuco = Uri.parse('https://www.tuasaude.com/muco-cervical/');
   final Uri _urlBasal = Uri.parse('https://www.fetalmed.net/temperatura-basal-o-que-e-e-como-controlar/');
   final Uri _urlCoito = Uri.parse('https://www.gineco.com.br/saude-feminina/metodos-contraceptivos/coito-interrompido');
@@ -112,9 +111,9 @@ class _NHormonalPage extends State<NHormonalPage> {
           color: Color.fromARGB(255, 255, 255, 255),
           size: 40,
         ),
-        backgroundColor: Color.fromARGB(255, 249, 104, 83),
-        title:Row(
-          children: const [
+        backgroundColor: const Color.fromARGB(255, 249, 104, 83),
+        title:const Row(
+          children: [
             Center(
               child: Text(
                 'Tipos de métodos',
@@ -134,7 +133,7 @@ class _NHormonalPage extends State<NHormonalPage> {
             margin: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               border: Border.all(
-                color: Color.fromARGB(255, 249, 104, 83), // Cor da borda
+                color: const Color.fromARGB(255, 249, 104, 83), // Cor da borda
                 width: 2, // Largura da borda
               ),
               borderRadius: BorderRadius.circular(8), // Bordas arredondadas
@@ -181,11 +180,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                   height: 30,
                 ),
                 const Text(
-                  'Esse método requer uma barreira mecânica como o uso do preservativo masculino ' + 
-                  'ou do feminino, uma barreira química com o uso de espermicidas e de esponjas ou ' + 
-                  'uma barreira mista como o diafragma e o capuz cervical. Vale lembrar que todos esses ' +
-                  'métodos de barreira podem ajudar a prevenir as ISTs, mas somente o preservativo feminino ' +
-                  'e o masculino oferecem alta proteção contra essas doenças, inclusive o HIV',
+                  'Esse método requer uma barreira mecânica como o uso do preservativo masculino ou do feminino, uma barreira química com o uso de espermicidas e de esponjas ou uma barreira mista como o diafragma e o capuz cervical. Vale lembrar que todos esses métodos de barreira podem ajudar a prevenir as ISTs, mas somente o preservativo feminino e o masculino oferecem alta proteção contra essas doenças, inclusive o HIV',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
@@ -205,7 +200,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                               height: 70.0,
                               // ignore: prefer_const_constructors
                               decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 32, 74, 158),
+                                  color: const Color.fromARGB(255, 32, 74, 158),
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
@@ -234,7 +229,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                                 height: 70.0,
                                 // ignore: prefer_const_constructors
                                 decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 32, 74, 158),
+                                    color: const Color.fromARGB(255, 32, 74, 158),
                                     shape: BoxShape.circle,
                                     boxShadow: const [
                                       BoxShadow(
@@ -263,7 +258,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                               height: 70.0,
                               // ignore: prefer_const_constructors
                               decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 32, 74, 158),
+                                  color: const Color.fromARGB(255, 32, 74, 158),
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
@@ -286,9 +281,9 @@ class _NHormonalPage extends State<NHormonalPage> {
                           ),
                         ],
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
+                        children: [
                          // SizedBox(width: 35),
                           Text('Tabelinha'),
                           //SizedBox(width: 56),
@@ -313,7 +308,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                               height: 70.0,
                               // ignore: prefer_const_constructors
                               decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 32, 74, 158),
+                                  color: const Color.fromARGB(255, 32, 74, 158),
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
@@ -342,7 +337,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                                 height: 70.0,
                                 // ignore: prefer_const_constructors
                                 decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 32, 74, 158),
+                                    color: const Color.fromARGB(255, 32, 74, 158),
                                     shape: BoxShape.circle,
                                     boxShadow: const [
                                       BoxShadow(
@@ -371,7 +366,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                               height: 70.0,
                               // ignore: prefer_const_constructors
                               decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 32, 74, 158),
+                                  color: const Color.fromARGB(255, 32, 74, 158),
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
@@ -394,9 +389,9 @@ class _NHormonalPage extends State<NHormonalPage> {
                           ),
                         ],
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
+                        children: [
                          // SizedBox(width: 35),
                           Text('Coito\nInterromp.'),
                           //SizedBox(width: 56),
@@ -421,7 +416,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                               height: 70.0,
                               // ignore: prefer_const_constructors
                               decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 32, 74, 158),
+                                  color: const Color.fromARGB(255, 32, 74, 158),
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
@@ -450,7 +445,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                                 height: 70.0,
                                 // ignore: prefer_const_constructors
                                 decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 32, 74, 158),
+                                    color: const Color.fromARGB(255, 32, 74, 158),
                                     shape: BoxShape.circle,
                                     boxShadow: const [
                                       BoxShadow(
@@ -479,7 +474,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                               height: 70.0,
                               // ignore: prefer_const_constructors
                               decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 32, 74, 158),
+                                  color: const Color.fromARGB(255, 32, 74, 158),
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
@@ -502,9 +497,9 @@ class _NHormonalPage extends State<NHormonalPage> {
                           ),
                         ],
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
+                        children: [
                          // SizedBox(width: 35),
                           Text('Adesivo'),
                           //SizedBox(width: 56),
@@ -529,7 +524,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                               height: 70.0,
                               // ignore: prefer_const_constructors
                               decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 32, 74, 158),
+                                  color: const Color.fromARGB(255, 32, 74, 158),
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
@@ -558,7 +553,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                                 height: 70.0,
                                 // ignore: prefer_const_constructors
                                 decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 32, 74, 158),
+                                    color: const Color.fromARGB(255, 32, 74, 158),
                                     shape: BoxShape.circle,
                                     boxShadow: const [
                                       BoxShadow(
@@ -587,7 +582,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                               height: 70.0,
                               // ignore: prefer_const_constructors
                               decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 32, 74, 158),
+                                  color: const Color.fromARGB(255, 32, 74, 158),
                                   shape: BoxShape.circle,
                                   boxShadow: const [
                                     BoxShadow(
@@ -610,9 +605,9 @@ class _NHormonalPage extends State<NHormonalPage> {
                           ),
                         ],
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
+                        children: [
                          // SizedBox(width: 35),
                           Text('Adesivo'),
                           //SizedBox(width: 56),

@@ -48,6 +48,8 @@ dependencies:
   table_calendar: ^3.0.9
   flutter_svg: ^1.1.6
   url_launcher: ^6.1.10
+  awesome_snackbar_content: ^0.1.2
+  fluttertoast: ^8.2.1
 
 dev_dependencies:
   flutter_test:

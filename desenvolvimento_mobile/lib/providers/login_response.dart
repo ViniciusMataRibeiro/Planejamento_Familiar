@@ -6,10 +6,9 @@ abstract class LoginCallBack {
   void onLoginError(String error);
 }
 
-
 class LoginResponse 
 {
-  LoginCallBack _callBack;
+  final LoginCallBack _callBack;
   LoginRequest loginRequest = LoginRequest();
   LoginResponse(this._callBack);
   doLogin(String username, String password) {

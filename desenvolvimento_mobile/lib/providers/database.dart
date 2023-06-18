@@ -1,5 +1,6 @@
 import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart';
+// ignore: depend_on_referenced_packages
+import 'package:path/path.dart' as p;
 
 const String tabelaUsuario = "tabelaUsuario";
 const String idColumn = "idColumn";
@@ -12,15 +13,15 @@ const String senhaColumn = "senhaColumn";
 class Usuario {
   late int id;
   late String nomeCompleto;
-  late DateTime dataNascimento;
+  late String dataNascimento;
   late String usuario;
   late String email;
   late String senha;
 
-  Usuario(this.usuario, this.senha);
+  Usuario(this.nomeCompleto, this.dataNascimento, this.usuario, this.email, this.senha);
 
   Usuario.fromMap(Map map) {
-    id = map[id];
+    id = map[idColumn];
     nomeCompleto = map[nomeCompletoColumn];
     dataNascimento = map[dataNascimentoColumn];
     usuario = map[usuarioColumn];
@@ -43,26 +44,33 @@ class DatabaseProvider {
   static final DatabaseProvider _instance = DatabaseProvider.internal();
   factory DatabaseProvider() => _instance;
   DatabaseProvider.internal();
+  late Future<Database> database;
 
-  Future<Database> initDb() async {
-    final dataBasesPath = await getDatabasesPath();
-    final path = join(dataBasesPath, "db_planejamento.db");
-
-    return await openDatabase(path, version: 1,
-        onCreate: (Database db, int newerVersion) async {
-      await db.execute(
-          "Create TABLE $tabelaUsuario($idColumn INTEGER PRIMARY KEY,"
-          "$nomeCompletoColumn STRING, $dataNascimentoColumn DATE, $usuarioColumn STRING, $emailColumn STRING, $senhaColumn STRING)");
-    });
+  Future initDb() async {
+    var databasesPath = await getDatabasesPath();
+    String path = p.join(databasesPath, "db_planejamento.db");
+    database = openDatabase(
+      path,
+      version: 1,
+      onCreate: (Database db, int version) {
+        return db.execute("CREATE TABLE IF NOT EXISTS $tabelaUsuario ( "
+            "$idColumn INTEGER PRIMARY KEY,"
+            "$nomeCompletoColumn TEXT,"
+            "$dataNascimentoColumn TEXT,"
+            "$usuarioColumn TEXT,"
+            "$emailColumn TEXT,"
+            "$senhaColumn TEXT)");
+      },
+    );
   }
 
   Future<int> salvarUsuario(Usuario usuario) async {
-    final db = await DatabaseProvider().initDb();
+    final db = await database;
     return db.insert(tabelaUsuario, usuario.toMap());
   }
 
   Future<Usuario?> getUsuario(String usuario, String senha) async {
-    final db = await DatabaseProvider().initDb();
+    final db =  await database;
     List<Map> maps = await db.query(tabelaUsuario,
         columns: [
           idColumn,
@@ -72,8 +80,8 @@ class DatabaseProvider {
           emailColumn,
           senhaColumn
         ],
-        where: "$idColumn = ?",
-        whereArgs: [usuario, senha]);
+        where: "$emailColumn = ?",
+        whereArgs: [usuario]);
     if (maps.isNotEmpty) {
       return Usuario.fromMap(maps.first);
     } else {
@@ -82,13 +90,13 @@ class DatabaseProvider {
   }
 
   Future<int> updateUsuario(Usuario usuario) async {
-    final db = await DatabaseProvider().initDb();
+    final db =  await database;
     return await db.update(tabelaUsuario, usuario.toMap(),
         where: "$idColumn = ?", whereArgs: [usuario.id]);
   }
 
   Future<List<Usuario>> getAllUsuarios() async {
-    final db = await DatabaseProvider().initDb();
+    final db =  await database;
     List listMap = await db.rawQuery("SELECT * FROM tabelaUsuarios");
     List<Usuario> listUsuarios = [];
     for (Map m in listMap) {
@@ -98,8 +106,7 @@ class DatabaseProvider {
   }
 
   Future<int> deleteUsuario(int id) async {
-    final db = await DatabaseProvider().initDb();
-    return await db
-        .delete(tabelaUsuario, where: "$idColumn = ?", whereArgs: [id]);
+    final db =  await database;
+    return await db.delete(tabelaUsuario, where: "$idColumn = ?", whereArgs: [id]);
   }
 }

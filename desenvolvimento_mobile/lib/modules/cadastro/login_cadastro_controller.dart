@@ -6,4 +6,5 @@ class LoginCadastroController extends GetxController{
   void toggleShowPassword() {
     showPassword.value = !showPassword.value;
   }
+  
 }

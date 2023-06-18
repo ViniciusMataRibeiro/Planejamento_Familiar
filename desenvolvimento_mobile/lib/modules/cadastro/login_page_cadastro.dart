@@ -44,6 +44,7 @@ class LoginCadastro extends State<LoginCadastroState>
     LoginCadastroController(),
   );
 
+  // ignore: unused_field
   late Animation<double> _animation;
   late AnimationController _animationController;
 
@@ -318,7 +319,9 @@ class LoginCadastro extends State<LoginCadastroState>
                 padding: const EdgeInsets.only(
                     top: 8, left: 28, right: 28, bottom: 30),
                 child: ElevatedButton(
-                  onPressed: () => Get.toNamed('/metContracep'),
+                  onPressed: () async {
+                    //await cadastroExtintorController.goTologin();
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                     padding: const EdgeInsets.only(top: 7, bottom: 7),

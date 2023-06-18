@@ -5,8 +5,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-
-
 main() async {
 
   Intl.defaultLocale = 'pt_BR';

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class PlanejamentoPage extends StatefulWidget {
   const PlanejamentoPage({super.key});
@@ -19,8 +18,8 @@ class _PlanejamentoPage extends State<PlanejamentoPage> {
           size: 40,
         ),
         backgroundColor: const Color.fromARGB(255, 249, 104, 83),
-        title: Center(
-          child: Column(children: const [
+        title: const Center(
+          child: Column(children: [
             Center(
               child: Text(
                 'Planejamento familiar',
@@ -47,8 +46,8 @@ class _PlanejamentoPage extends State<PlanejamentoPage> {
               borderRadius: BorderRadius.circular(8), // Bordas arredondadas
             ),
             padding: const EdgeInsets.all(12), // Espaçamento interno
-            child: Column(
-              children: const [
+            child: const Column(
+              children: [
                 Text(
                   'O que é Planejamento familiar?',
                   textAlign: TextAlign.center,
@@ -61,6 +60,7 @@ class _PlanejamentoPage extends State<PlanejamentoPage> {
                   height: 30,
                 ),
                 Text(
+                  // ignore: prefer_interpolation_to_compose_strings, prefer_adjacent_string_concatenation
                   'Planejamento familiar são ações criadas com o objetivo de orientar mulheres ' + 
                   'e homens quanto aos métodos contraceptivos, prevenção de gravidez não desejada ' +
                   'e direito de escolha de ter filhos ou não. E para aqueles casais que desejam ser pais, ' + 
