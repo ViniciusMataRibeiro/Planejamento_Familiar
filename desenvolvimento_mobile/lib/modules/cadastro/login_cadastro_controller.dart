@@ -5,8 +5,8 @@ import '../../providers/database_user.dart';
 
 class LoginCadastroController extends GetxController{
   var showPassword = true.obs;
-  var nomeCompletoController  = TextEditingController(text: '');
-  var dataNascimentoController  = TextEditingController(text: '');
+  var nomeCompletoController = TextEditingController(text: '');
+  var dataNascimentoController = TextEditingController(text: '');
   var userController = TextEditingController(text: '');
   var emailController = TextEditingController(text: '');
   var passwordController = TextEditingController(text: '');
@@ -26,12 +26,12 @@ class LoginCadastroController extends GetxController{
   
   Future<String> cadastro() async {
     try {
-      if (nomeCompletoController.text == "" || dataNascimentoController.text == "" || userController.text == "" || emailController.text == "" || passwordController.text == "") {
-      return "Preencha todos os campos";
-    }
+      if (nomeCompletoController.text == "" || userController.text == "" || emailController.text == "" || passwordController.text == "") {
+        return "Preencha todos os campos";
+      }
 
-    var usuario = Usuario(nomeCompletoController.toString(), dataNascimentoController.toString(), userController.toString(), emailController.toString(), passwordController.toString());
-    var result = await db.salvarUsuario(usuario);
+    var usuario = Usuario(nomeCompletoController.text.toString(), dataNascimentoController.text.toString(), userController.text.toString(), emailController.text.toString(), passwordController.text.toString());
+    await db.salvarUsuario(usuario);
 
     return "ok";
     } catch (e) {

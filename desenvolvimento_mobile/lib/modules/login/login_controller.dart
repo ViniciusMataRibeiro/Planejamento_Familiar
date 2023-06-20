@@ -15,8 +15,6 @@ class LoginController extends GetxController{
   void onInit() {
     super.onInit();
     db.initDb().then((value) async {
-      await populabancoUsuario();
-      //load();
     });
   }
 
@@ -25,7 +23,7 @@ class LoginController extends GetxController{
   }
 
   Future<String> goTologin() async {
-    await populabancoUsuario();
+    //await populabancoUsuario();
     var usuario = await db.getUsuario(emailController.text, passwordController.text);
 
     if (usuario != null) {
@@ -58,11 +56,11 @@ class LoginController extends GetxController{
     });
   }
 
-  Future<void> populabancoUsuario() async {
-    List<Usuario> usuarios = [];
-    usuarios.add(Usuario("administrador", DateTime.now().toString(), "admin", "admin@email.com", "123456"));
-    for (var i = 0; i < usuarios.length; i++) {
-      await db.salvarUsuario(usuarios[i]);
-    }
-  }
+  // Future<void> populabancoUsuario() async {
+  //   List<Usuario> usuarios = [];
+  //   usuarios.add(Usuario("administrador", DateTime.now().toString(), "admin", "admin@email.com", "123456"));
+  //   for (var i = 0; i < usuarios.length; i++) {
+  //     await db.salvarUsuario(usuarios[i]);
+  //   }
+  // }
 }
