@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../../providers/database_calendario.dart';
+import '../../providers/database_user.dart';
+
 class AgendaPage extends StatefulWidget {
   const AgendaPage({super.key});
 
@@ -11,12 +14,46 @@ class AgendaPage extends StatefulWidget {
 }
 
 class _AgendaPage extends State<AgendaPage> {
+  final DatabaseProvider dao = DatabaseProvider();
+  List<Agenda> agenda = [];
+
+  _AgendaPage() {
+    dao.initDb().then((value) {
+      load();
+    });
+  }
+
+  load() {
+    dao.getAllAgendas().then((value) {
+      setState(() {
+        agenda = value;
+      });
+    });
+  }
+
   DateTime today = DateTime.now();
 
   void _onDaySelected(DateTime day, DateTime focusedDay) {
     setState(() {
       today = day;
     });
+  }
+
+  Widget _buildAgendaList() {
+    return ListView.builder(
+      padding: const EdgeInsets.all(12),
+      itemCount: agenda.length,
+      itemBuilder: (context, index) {
+        Agenda item = agenda[index];
+        return ListTile(
+          title: Text(
+            'Data: ${item.dia}/${item.mes}/${item.ano}\nTarefa: ${item.descricao}',
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          // Adicione aqui outros campos que deseja exibir
+        );
+      },
+    );
   }
 
   @override
@@ -167,7 +204,108 @@ class _AgendaPage extends State<AgendaPage> {
                         fontWeight: FontWeight.bold)),
               ),
             ),
+            Expanded(
+              child: _buildAgendaList(),
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: () {
+                  _showConfirmationDialog();
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  padding: const EdgeInsets.all(10),
+                ),
+                child: const Icon(
+                  Icons.add,
+                  size: 35,
+                  color: Colors.white,
+                ),
+              ),
+            ),
           ],
         ));
+  }
+
+  void _insertDataToDatabase(String desc) async {
+    // Crie um novo objeto Agenda com os dados que deseja inserir
+    Agenda novaAgenda = Agenda(
+        id: 0, // O valor do ID será atribuído automaticamente pelo banco de dados
+        dia: today.day,
+        mes: today.month,
+        ano: today.year,
+        descricao: desc);
+
+    // Insira o objeto no banco de dados
+    dao.insert(novaAgenda);
+
+    // Atualize a lista de agendas chamando o método load()
+    load();
+  }
+
+  void _showConfirmationDialog() {
+    TextEditingController descriptionController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text(
+            'Confirmação',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                'Deseja cadastrar uma data?',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                'Data selecionada: ${today.day}/${today.month}/${today.year}',
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: descriptionController,
+                decoration: const InputDecoration(
+                  labelText: 'Descrição',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              child: const Text(
+                'Cancelar',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop(); // Fecha o modal
+              },
+            ),
+            TextButton(
+              child: const Text(
+                'Confirmar',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              ),
+              onPressed: () {
+                String description = descriptionController.text;
+                if (description.isNotEmpty) {
+                  _insertDataToDatabase(
+                      description); // Chama o método para inserir os dados no banco de dados
+                  Navigator.of(context).pop(); // Fecha o modal
+                } else {
+                  // Exiba um aviso ou realize alguma ação quando a descrição estiver vazia
+                }
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 }
