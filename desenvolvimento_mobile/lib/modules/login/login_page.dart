@@ -162,7 +162,7 @@ class LoginPage extends GetView<LoginController> {
                   GestureDetector(
                     onTap: () => Get.toNamed('/cadastro'),
                     child: const Padding(
-                      padding: EdgeInsets.only(top: 10),
+                      padding: EdgeInsets.only(top: 20),
                       child: Text(
                         'Não tem uma Conta? Cadastre-se aqui!',
                         textAlign: TextAlign.center,
