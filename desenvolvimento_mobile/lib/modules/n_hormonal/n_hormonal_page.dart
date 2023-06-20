@@ -32,9 +32,9 @@ class _NHormonalPage extends State<NHormonalPage> {
       Uri.parse('https://urologia-sp.com.br/vasectomia/');
   final Uri _urlAmenorreia =
       Uri.parse('https://bebemamae.com/fertilidade/saude-fertilidade/metodo-da-lactacao-e-amenorreia-lam-o-que-e-preciso-saber');
+  final Uri _urlDiuCobre =
+      Uri.parse('https://www.clinicaceu.com.br/blog/mitos-e-verdades-sobre-o-diu-de-cobre/');
       
-      
-
       
 
   Future<void> _tabelinha() async {
@@ -122,6 +122,14 @@ class _NHormonalPage extends State<NHormonalPage> {
       throw Exception('Could not launch $_urlAmenorreia');
     } else {
       await launchUrl(_urlAmenorreia);
+    }
+  }
+
+  Future<void> _diucobre() async {
+    if (!await launchUrl(_urlDiuCobre)) {
+      throw Exception('Could not launch $_urlDiuCobre');
+    } else {
+      await launchUrl(_urlDiuCobre);
     }
   }
 
@@ -615,7 +623,7 @@ class _NHormonalPage extends State<NHormonalPage> {
                       Column(
                         children: [
                           ElevatedButton(
-                            onPressed: _vasectomia,
+                            onPressed: _diucobre,
                             // ignore: sort_child_properties_last
                             child: Container(
                               width: 70.0,
