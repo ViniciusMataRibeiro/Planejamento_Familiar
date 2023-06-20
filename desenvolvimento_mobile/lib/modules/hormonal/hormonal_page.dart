@@ -9,94 +9,93 @@ class HormonalPage extends StatefulWidget {
 }
 
 class _HormonalPage extends State<HormonalPage> {
-
-  final Uri _urlCervical = Uri.parse('https://www.vivasuavida.com.br/metodos-contraceptivos/contraceptivos-curta-duracao/capuz-cervical');
-  final Uri _urlInjetavel = Uri.parse('https://www.tuasaude.com/injecao-anticoncepcional-mensal/');
-  final Uri _urlOral = Uri.parse('https://www.gineco.com.br/saude-feminina/metodos-contraceptivos/pilula-anticoncepcional');
-  final Uri _urlDiu = Uri.parse('https://www.clinicaceu.com.br/blog/o-que-voce-precisa-saber-sobre-diu/');
-  final Uri _urlEsponja = Uri.parse('https://bedmed.com.br/ginecologia-conheca-esponja-vaginal/');
-  final Uri _urlAnel = Uri.parse('https://www.gineco.com.br/saude-feminina/metodos-contraceptivos/anel-vaginal');
-  final Uri _urlAdesivo = Uri.parse('https://www.gineco.com.br/saude-feminina/metodos-contraceptivos/adesivo');
-  final Uri _urlImplante = Uri.parse('https://drdanielstellin.com.br/implantes-hormonais/');
-  final Uri _urlPilula = Uri.parse('https://www.gineco.com.br/saude-feminina/materias-2/pilula-do-dia-seguinte');
+  final Uri _urlCervical = Uri.parse(
+      'https://www.vivasuavida.com.br/metodos-contraceptivos/contraceptivos-curta-duracao/capuz-cervical');
+  final Uri _urlInjetavel =
+      Uri.parse('https://www.tuasaude.com/injecao-anticoncepcional-mensal/');
+  final Uri _urlOral = Uri.parse(
+      'https://www.gineco.com.br/saude-feminina/metodos-contraceptivos/pilula-anticoncepcional');
+  final Uri _urlDiu = Uri.parse(
+      'https://www.clinicaceu.com.br/blog/o-que-voce-precisa-saber-sobre-diu/');
+  final Uri _urlEsponja =
+      Uri.parse('https://bedmed.com.br/ginecologia-conheca-esponja-vaginal/');
+  final Uri _urlAnel = Uri.parse(
+      'https://www.gineco.com.br/saude-feminina/metodos-contraceptivos/anel-vaginal');
+  final Uri _urlAdesivo = Uri.parse(
+      'https://www.gineco.com.br/saude-feminina/metodos-contraceptivos/adesivo');
+  final Uri _urlImplante =
+      Uri.parse('https://drdanielstellin.com.br/implantes-hormonais/');
+  final Uri _urlPilula = Uri.parse(
+      'https://www.gineco.com.br/saude-feminina/materias-2/pilula-do-dia-seguinte');
 
   Future<void> _cervical() async {
-    if(!await launchUrl(_urlCervical)){
+    if (!await launchUrl(_urlCervical)) {
       throw Exception('Could not launch $_urlCervical');
-    }
-    else{
+    } else {
       await launchUrl(_urlCervical);
     }
   }
 
-    Future<void> _injetavel() async {
-    if(!await launchUrl(_urlInjetavel)){
+  Future<void> _injetavel() async {
+    if (!await launchUrl(_urlInjetavel)) {
       throw Exception('Could not launch $_urlInjetavel');
-    }
-    else{
+    } else {
       await launchUrl(_urlInjetavel);
     }
   }
 
-    Future<void> _oral() async {
-    if(!await launchUrl(_urlOral)){
+  Future<void> _oral() async {
+    if (!await launchUrl(_urlOral)) {
       throw Exception('Could not launch $_urlOral');
-    }
-    else{
+    } else {
       await launchUrl(_urlOral);
     }
   }
 
   Future<void> _diu() async {
-    if(!await launchUrl(_urlDiu)){
+    if (!await launchUrl(_urlDiu)) {
       throw Exception('Could not launch $_urlDiu');
-    }
-    else{
+    } else {
       await launchUrl(_urlDiu);
     }
   }
 
-    Future<void> _esponja() async {
-    if(!await launchUrl(_urlEsponja)){
+  Future<void> _esponja() async {
+    if (!await launchUrl(_urlEsponja)) {
       throw Exception('Could not launch $_urlEsponja');
-    }
-    else{
+    } else {
       await launchUrl(_urlEsponja);
     }
   }
 
-    Future<void> _anel() async {
-    if(!await launchUrl(_urlAnel)){
+  Future<void> _anel() async {
+    if (!await launchUrl(_urlAnel)) {
       throw Exception('Could not launch $_urlAnel');
-    }
-    else{
+    } else {
       await launchUrl(_urlAnel);
     }
   }
 
-    Future<void> _adesivo() async {
-    if(!await launchUrl(_urlAdesivo)){
+  Future<void> _adesivo() async {
+    if (!await launchUrl(_urlAdesivo)) {
       throw Exception('Could not launch $_urlAdesivo');
-    }
-    else{
+    } else {
       await launchUrl(_urlAdesivo);
     }
   }
 
-    Future<void> _implante() async {
-    if(!await launchUrl(_urlImplante)){
+  Future<void> _implante() async {
+    if (!await launchUrl(_urlImplante)) {
       throw Exception('Could not launch $_urlImplante');
-    }
-    else{
+    } else {
       await launchUrl(_urlImplante);
     }
   }
 
-    Future<void> _pilula() async {
-    if(!await launchUrl(_urlPilula)){
+  Future<void> _pilula() async {
+    if (!await launchUrl(_urlPilula)) {
       throw Exception('Could not launch $_urlPilula');
-    }
-    else{
+    } else {
       await launchUrl(_urlPilula);
     }
   }
@@ -178,21 +177,25 @@ class _HormonalPage extends State<HormonalPage> {
                 const SizedBox(
                   height: 30,
                 ),
-                const Text(
-                  'Os métodos para prevenção a gravidez ou chamados de contraceptivos hormonais ' +
-                  'são métodos que tem em sua formação várias concentrações sintéticas de hormônios ' + 
-                  'femininos do organismo humano, sendo eles: estrógeno e progesterona. Tendo em ' + 
-                  'vista isso, os métodos podem ter um hormônio só ou os dois hormônios juntos.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  child: const Text(
+                    'Os métodos para prevenção a gravidez ou chamados de contraceptivos hormonais ' +
+                        'são métodos que tem em sua formação várias concentrações sintéticas de hormônios ' +
+                        'femininos do organismo humano, sendo eles: estrógeno e progesterona. Tendo em ' +
+                        'vista isso, os métodos podem ter um hormônio só ou os dois hormônios juntos.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
-                Column(
-                  children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
                         children: [
                           ElevatedButton(
                             onPressed: _cervical,
@@ -220,38 +223,48 @@ class _HormonalPage extends State<HormonalPage> {
                                 padding: EdgeInsets.zero,
                                 shape: const CircleBorder(),
                                 side: const BorderSide(
-                                    color: Color.fromARGB(255, 154, 177, 255),                                   
+                                    color: Color.fromARGB(255, 154, 177, 255),
                                     width: 2)),
                           ),
+                          const Text('Capuz\nCervical'),
+                        ],
+                      ),
+                      Column(
+                        children: [
                           ElevatedButton(
-                              onPressed: _injetavel,
-                              // ignore: sort_child_properties_last
-                              child: Container(
-                                width: 70.0,
-                                height: 70.0,
-                                // ignore: prefer_const_constructors
-                                decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 32, 74, 158),
-                                    shape: BoxShape.circle,
-                                    boxShadow: const [
-                                      BoxShadow(
-                                          color: Colors.black, blurRadius: 3)
-                                    ]),
-                                child: const Center(
-                                  child: Icon(
-                                    Icons.vaccines_outlined,
-                                    color: Colors.white,
-                                    size: 50,
-                                  ),
+                            onPressed: _injetavel,
+                            // ignore: sort_child_properties_last
+                            child: Container(
+                              width: 70.0,
+                              height: 70.0,
+                              // ignore: prefer_const_constructors
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 32, 74, 158),
+                                  shape: BoxShape.circle,
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.black, blurRadius: 3)
+                                  ]),
+                              child: const Center(
+                                child: Icon(
+                                  Icons.vaccines_outlined,
+                                  color: Colors.white,
+                                  size: 50,
                                 ),
                               ),
-                              style: ElevatedButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                  shape: const CircleBorder(),
-                                  side: const BorderSide(
-                                      color: Color.fromARGB(255, 154, 177, 255),
-                                      width: 2)),
                             ),
+                            style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                                shape: const CircleBorder(),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 154, 177, 255),
+                                    width: 2)),
+                          ),
+                          const Text('Anticoncep.\n  Injetavel'),
+                        ],
+                      ),
+                      Column(
+                        children: [
                           ElevatedButton(
                             onPressed: _oral,
                             // ignore: sort_child_properties_last
@@ -281,26 +294,18 @@ class _HormonalPage extends State<HormonalPage> {
                                     color: Color.fromARGB(255, 154, 177, 255),
                                     width: 2)),
                           ),
+                          const Text('Anticoncep.\nOral')
                         ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                         // SizedBox(width: 35),
-                          Text('Capuz\nCervical'),
-                          //SizedBox(width: 56),
-                          Text('Anticoncep.\n  Injetavel'),
-                          //SizedBox(width: 40),
-                          Text('Anticoncep.\n      Oral')
-                        ],
-                      ),
-                  ],
+                      )
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 20),
-                Column(
-                  children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
                         children: [
                           ElevatedButton(
                             onPressed: _diu,
@@ -331,35 +336,45 @@ class _HormonalPage extends State<HormonalPage> {
                                     color: Color.fromARGB(255, 154, 177, 255),
                                     width: 2)),
                           ),
+                          const Text('DIU\nHormonal'),
+                        ],
+                      ),
+                      Column(
+                        children: [
                           ElevatedButton(
-                              onPressed: _esponja,
-                              // ignore: sort_child_properties_last
-                              child: Container(
-                                width: 70.0,
-                                height: 70.0,
-                                // ignore: prefer_const_constructors
-                                decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 32, 74, 158),
-                                    shape: BoxShape.circle,
-                                    boxShadow: const [
-                                      BoxShadow(
-                                          color: Colors.black, blurRadius: 3)
-                                    ]),
-                                child: const Center(
-                                  child: Icon(
-                                    Icons.wb_cloudy,
-                                    color: Colors.white,
-                                    size: 50,
-                                  ),
+                            onPressed: _esponja,
+                            // ignore: sort_child_properties_last
+                            child: Container(
+                              width: 70.0,
+                              height: 70.0,
+                              // ignore: prefer_const_constructors
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 32, 74, 158),
+                                  shape: BoxShape.circle,
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.black, blurRadius: 3)
+                                  ]),
+                              child: const Center(
+                                child: Icon(
+                                  Icons.wb_cloudy,
+                                  color: Colors.white,
+                                  size: 50,
                                 ),
                               ),
-                              style: ElevatedButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                  shape: const CircleBorder(),
-                                  side: const BorderSide(
-                                      color: Color.fromARGB(255, 154, 177, 255),
-                                      width: 2)),
                             ),
+                            style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                                shape: const CircleBorder(),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 154, 177, 255),
+                                    width: 2)),
+                          ),
+                          const Text('Esponja\nContraceptiva'),
+                        ],
+                      ),
+                      Column(
+                        children: [
                           ElevatedButton(
                             onPressed: _anel,
                             // ignore: sort_child_properties_last
@@ -389,26 +404,18 @@ class _HormonalPage extends State<HormonalPage> {
                                     color: Color.fromARGB(255, 154, 177, 255),
                                     width: 4)),
                           ),
+                          const Text('Anel\nVaginal')
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                         // SizedBox(width: 35),
-                          Text('DIU\nHormonal'),
-                          //SizedBox(width: 56),
-                          Text('Esponja\n Contraceptiva'),
-                          //SizedBox(width: 40),
-                          Text('Anel\n Vaginal')
-                        ],
-                      ),
-                  ],
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 20),
-                Column(
-                  children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
                         children: [
                           ElevatedButton(
                             onPressed: _adesivo,
@@ -439,35 +446,45 @@ class _HormonalPage extends State<HormonalPage> {
                                     color: Color.fromARGB(255, 154, 177, 255),
                                     width: 2)),
                           ),
+                          const Text('Adesivo\n'),
+                        ],
+                      ),
+                      Column(
+                        children: [
                           ElevatedButton(
-                              onPressed: _implante,
-                              // ignore: sort_child_properties_last
-                              child: Container(
-                                width: 70.0,
-                                height: 70.0,
-                                // ignore: prefer_const_constructors
-                                decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 32, 74, 158),
-                                    shape: BoxShape.circle,
-                                    boxShadow: const [
-                                      BoxShadow(
-                                          color: Colors.black, blurRadius: 3)
-                                    ]),
-                                child: const Center(
-                                  child: Icon(
-                                    Icons.remove,
-                                    color: Colors.white,
-                                    size: 70,
-                                  ),
+                            onPressed: _implante,
+                            // ignore: sort_child_properties_last
+                            child: Container(
+                              width: 70.0,
+                              height: 70.0,
+                              // ignore: prefer_const_constructors
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 32, 74, 158),
+                                  shape: BoxShape.circle,
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.black, blurRadius: 3)
+                                  ]),
+                              child: const Center(
+                                child: Icon(
+                                  Icons.remove,
+                                  color: Colors.white,
+                                  size: 70,
                                 ),
                               ),
-                              style: ElevatedButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                  shape: const CircleBorder(),
-                                  side: const BorderSide(
-                                      color: Color.fromARGB(255, 154, 177, 255),
-                                      width: 2)),
                             ),
+                            style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                                shape: const CircleBorder(),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 154, 177, 255),
+                                    width: 2)),
+                          ),
+                          const Text('Implante\nHormonal'),
+                        ],
+                      ),
+                      Column(
+                        children: [
                           ElevatedButton(
                             onPressed: _pilula,
                             // ignore: sort_child_properties_last
@@ -497,23 +514,13 @@ class _HormonalPage extends State<HormonalPage> {
                                     color: Color.fromARGB(255, 154, 177, 255),
                                     width: 2)),
                           ),
+                          const Text('  Pilula do\ndia seguinte')
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                         // SizedBox(width: 35),
-                          Text('Adesivo'),
-                          //SizedBox(width: 56),
-                          Text('Implante\n Hormonal'),
-                          //SizedBox(width: 40),
-                          Text('Pilula do\n dia seguinte')
-                        ],
-                      ),
-                      const SizedBox(height: 20),
-                  ],
+                    ],
+                  ),
                 ),
-                
+                const SizedBox(height: 30)
               ],
             ),
           )
