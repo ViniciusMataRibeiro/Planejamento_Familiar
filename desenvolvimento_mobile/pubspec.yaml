@@ -37,6 +37,20 @@ dependencies:
   intl: ^0.18.0
   ficonsax:
   sqflite: ^2.2.8
+  syncfusion_localizations: ^21.1.35
+  syncfusion_flutter_datagrid_export: ^21.1.35-beta
+  syncfusion_flutter_calendar: ^21.1.35
+  syncfusion_flutter_datepicker: ^21.1.35
+  syncfusion_flutter_charts: ^21.1.35
+  syncfusion_flutter_gauges: ^21.1.35
+  syncfusion_flutter_sliders: ^21.1.35
+  syncfusion_flutter_pdf: ^21.1.35
+  syncfusion_flutter_barcodes: ^21.1.35
+  syncfusion_officechart: ^21.1.35-beta
+  syncfusion_flutter_maps: ^21.1.35
+  syncfusion_flutter_signaturepad: ^21.1.35
+  syncfusion_flutter_pdfviewer: ^21.1.35
+  syncfusion_flutter_treemap: ^21.1.35
   
 
 
@@ -61,6 +75,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
