@@ -134,6 +134,7 @@ class LoginPage extends GetView<LoginController> {
                           title: 'Erro ao Logar!',
                           message: result.toString(),
                           contentType: ContentType.failure,
+                          color: const Color.fromARGB(255, 192, 0, 0),
                         ),
                       );
                       // ignore: use_build_context_synchronously

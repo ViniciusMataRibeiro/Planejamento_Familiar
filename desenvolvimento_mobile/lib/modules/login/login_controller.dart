@@ -23,7 +23,6 @@ class LoginController extends GetxController{
   }
 
   Future<String> goTologin() async {
-    //await populabancoUsuario();
     var usuario = await db.getUsuario(emailController.text, passwordController.text);
 
     if (usuario != null) {
@@ -43,7 +42,7 @@ class LoginController extends GetxController{
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: 4,
-        backgroundColor: Colors.redAccent,
+        backgroundColor: const Color.fromARGB(255, 192, 123, 123),
         textColor: Colors.white,
         fontSize: 15.0);
   }
@@ -55,12 +54,4 @@ class LoginController extends GetxController{
       passwordController.text = "";
     });
   }
-
-  // Future<void> populabancoUsuario() async {
-  //   List<Usuario> usuarios = [];
-  //   usuarios.add(Usuario("administrador", DateTime.now().toString(), "admin", "admin@email.com", "123456"));
-  //   for (var i = 0; i < usuarios.length; i++) {
-  //     await db.salvarUsuario(usuarios[i]);
-  //   }
-  // }
 }
