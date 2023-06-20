@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-import '../../providers/database.dart';
+import '../../providers/database_user.dart';
 
 class LoginCadastroController extends GetxController{
   var showPassword = true.obs;
