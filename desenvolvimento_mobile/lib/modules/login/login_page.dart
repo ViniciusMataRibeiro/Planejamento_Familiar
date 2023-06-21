@@ -6,6 +6,8 @@ import 'login_controller.dart';
 
 class LoginPage extends GetView<LoginController> {
   const LoginPage({super.key});
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +44,7 @@ class LoginPage extends GetView<LoginController> {
                 padding: const EdgeInsets.all(8),
                 child: Form(
                   child: TextFormField(
-                    controller: controller.emailController,
+                    controller: Get.put(LoginController()).emailController,
                     style: const TextStyle(
                         fontSize: 15,
                         color: Colors.white,
@@ -67,7 +69,7 @@ class LoginPage extends GetView<LoginController> {
                           Radius.circular(100),
                         ),
                       ),
-                      labelText: 'Usuário / E-mail',
+                      labelText: 'E-mail',
                       prefixIcon:
                           Icon(Icons.login_rounded, color: Colors.white),
                     ),

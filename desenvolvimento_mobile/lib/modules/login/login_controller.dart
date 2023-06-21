@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 class LoginController extends GetxController{
   var showPassword = true.obs;
 
-  var emailController = TextEditingController(text: 'admin@email.com');
-  var passwordController = TextEditingController(text: '123456');
+  var emailController = TextEditingController(text: '');
+  var passwordController = TextEditingController(text: '');
   final db = DatabaseProvider();
   List<Usuario> usuarios = [];
   

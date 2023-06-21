@@ -1,3 +1,4 @@
+import 'package:desenvolvimento_mobile/modules/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -14,8 +15,6 @@ class AgendaPage extends StatefulWidget {
 }
 
 class _AgendaPage extends State<AgendaPage> {
-
-
   final DatabaseProvider dao = DatabaseProvider();
   List<Agenda> agenda = [];
 
@@ -43,49 +42,105 @@ class _AgendaPage extends State<AgendaPage> {
 
 
   Widget _buildAgendaList() {
-
     var size = MediaQuery.of(context).size;
 
-
     return ListView.builder(
-      padding: const EdgeInsets.all(12),
-      itemCount: agenda.length,
-      itemBuilder: (context, index) {
-        Agenda item = agenda[index];
-        return Container(
-          height: size.height*0.11,
-          child: Card(
-            margin: const EdgeInsets.all(0),
-            elevation: 5,
-            shape: RoundedRectangleBorder(
-              side: const BorderSide(
-                color: Color.fromARGB(250, 255, 115, 95),
-                width: 3,
+        padding: const EdgeInsets.all(12),
+        itemCount: agenda.length,
+        itemBuilder: (context, index) {
+          Agenda item = agenda[index];
+          return Stack(
+            children: [
+              Wrap(
+                children: [
+                  Positioned(
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 8),
+                      width: size.width * 0.9,
+                      child: Card(
+                        margin: const EdgeInsets.all(0),
+                        elevation: 5,
+                        shape: RoundedRectangleBorder(
+                          side: const BorderSide(
+                            color: Color.fromARGB(250, 255, 115, 95),
+                            width: 3,
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: IntrinsicHeight(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Data: ${item.dia}/${item.mes}/${item.ano}',
+                                        style: const TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 8),
+                                      Text(
+                                        'Tarefa: ${item.descricao}',
+                                        style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  _deleteData(item.id);
+                                },
+                                icon: const Icon(Icons.close),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              borderRadius: BorderRadius.circular(10)
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-              'Data: ${item.dia}/${item.mes}/${item.ano}\nTarefa: ${item.descricao}',
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            ),
-        );
-      }
-    );
+            ],
+          );
+        });
   }
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: const Color.fromARGB(250, 255, 115, 95),
           iconTheme: const IconThemeData(color: Colors.white, size: 40),
+          actions: [
+            GestureDetector(
+              onTap: _showConfirmationDialog,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: Icon(Icons.add, color: Colors.white, size: 40),
+              ),
+            ),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+              },
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: Icon(Icons.exit_to_app, color: Colors.white, size: 40),
+              ),
+            ),
+          ],
         ),
         drawer: Drawer(
           backgroundColor: const Color.fromARGB(230, 255, 115, 95),
@@ -172,12 +227,12 @@ class _AgendaPage extends State<AgendaPage> {
         body: Column(
           children: [
             Container(
-              height: 400,
+              height: size.height * 0.50,
               padding: const EdgeInsets.all(12),
               color: const Color.fromARGB(250, 255, 115, 95),
               child: TableCalendar(
                 locale: Localizations.localeOf(context).languageCode,
-                rowHeight: 45,
+                rowHeight: 35,
                 calendarStyle: CalendarStyle(
                   weekendTextStyle:
                       const TextStyle(color: Colors.white, fontSize: 20),
@@ -230,23 +285,6 @@ class _AgendaPage extends State<AgendaPage> {
             Expanded(
               child: _buildAgendaList(),
             ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: FloatingActionButton(
-                  onPressed: () {
-                    _showConfirmationDialog();
-                  },
-                  backgroundColor: const Color.fromARGB(250, 255, 115, 95),
-                  child: const Icon(
-                    Icons.add,
-                    size: 35,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
           ],
         ));
   }
@@ -265,6 +303,13 @@ class _AgendaPage extends State<AgendaPage> {
 
     // Atualize a lista de agendas chamando o método load()
     load();
+  }
+
+  void _deleteData(int id) async {
+    dao.deleteAgenda(id);
+    setState(() {
+      load();
+    });
   }
 
   void _showConfirmationDialog() {
