@@ -14,6 +14,8 @@ class AgendaPage extends StatefulWidget {
 }
 
 class _AgendaPage extends State<AgendaPage> {
+
+
   final DatabaseProvider dao = DatabaseProvider();
   List<Agenda> agenda = [];
 
@@ -39,20 +41,41 @@ class _AgendaPage extends State<AgendaPage> {
     });
   }
 
+
   Widget _buildAgendaList() {
+
+    var size = MediaQuery.of(context).size;
+
+
     return ListView.builder(
       padding: const EdgeInsets.all(12),
       itemCount: agenda.length,
       itemBuilder: (context, index) {
         Agenda item = agenda[index];
-        return ListTile(
-          title: Text(
-            'Data: ${item.dia}/${item.mes}/${item.ano}\nTarefa: ${item.descricao}',
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-          // Adicione aqui outros campos que deseja exibir
+        return Container(
+          height: size.height*0.11,
+          child: Card(
+            margin: const EdgeInsets.all(0),
+            elevation: 5,
+            shape: RoundedRectangleBorder(
+              side: const BorderSide(
+                color: Color.fromARGB(250, 255, 115, 95),
+                width: 3,
+              ),
+              borderRadius: BorderRadius.circular(10)
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+              'Data: ${item.dia}/${item.mes}/${item.ano}\nTarefa: ${item.descricao}',
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            ),
         );
-      },
+      }
     );
   }
 
@@ -207,20 +230,20 @@ class _AgendaPage extends State<AgendaPage> {
             Expanded(
               child: _buildAgendaList(),
             ),
-            Align(
-              alignment: Alignment.center,
-              child: ElevatedButton(
-                onPressed: () {
-                  _showConfirmationDialog();
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  padding: const EdgeInsets.all(10),
-                ),
-                child: const Icon(
-                  Icons.add,
-                  size: 35,
-                  color: Colors.white,
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: FloatingActionButton(
+                  onPressed: () {
+                    _showConfirmationDialog();
+                  },
+                  backgroundColor: const Color.fromARGB(250, 255, 115, 95),
+                  child: const Icon(
+                    Icons.add,
+                    size: 35,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
